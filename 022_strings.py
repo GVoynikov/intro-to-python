@@ -14,14 +14,14 @@ my_name = "Kay"
 
 # Or single quotes:
 
-my_name = 'Kay'
+my_name = "Kay"
 
 # In Python, there's no meaningful difference between the
 # two.
 
 # Try out creating a string with your name in it:
 
-your_name = ???
+your_name = "Georgi"
 print(your_name)
 
 # @TASK: Check your work by running this file with:
