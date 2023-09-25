@@ -25,8 +25,8 @@ my_friends = ["Victoria", "Mel", "Melanie", "Emma"]
 
 # @TASK Try making your own here:
 
-your_list = ...
-print(your_list)
+your_list = [1, 4, 5, 6, 6]
+print(your_list[3])
 
 # @TASK and print it out by running:
 
