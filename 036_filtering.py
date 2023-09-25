@@ -18,12 +18,12 @@ from lib.helpers import check_that_these_are_equal
 # Imagine someone didn't put their age in
 raw_ages = [32, 40, None, 1, 32]
 
-clean_ages = [] # This is our accumulator again
+clean_ages = []  # This is our accumulator again
 
-for age in raw_ages: # We go through each age
-  # We combine a for with an if to remove 'None' items
-  if age != None:
-    clean_ages.append(age)
+for age in raw_ages:  # We go through each age
+    # We combine a for with an if to remove 'None' items
+    if age != None:
+        clean_ages.append(age)
 
 print(raw_ages)
 print(clean_ages)
@@ -35,13 +35,17 @@ print(clean_ages)
 print("")
 print("Function: only_positive_numbers")
 
+
 # Return a new list with only the positive numbers
 def only_positive_numbers(numbers):
-  pass
+    positive_numbers = []
+    for number in numbers:
+        if number > 0:
+            positive_numbers.append(number)
+    return positive_numbers
 
-check_that_these_are_equal(
-  only_positive_numbers([-4, 4, -3, 3]), [4, 3])
-check_that_these_are_equal(
-  only_positive_numbers([-100]), [])
+
+check_that_these_are_equal(only_positive_numbers([-4, 4, -3, 3]), [4, 3])
+check_that_these_are_equal(only_positive_numbers([-100]), [])
 
 # When you're done, move on to 037_dicts.py

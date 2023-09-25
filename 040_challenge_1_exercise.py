@@ -29,36 +29,46 @@ from lib.helpers import check_that_these_are_equal
 print("")
 print("Function: report_long_words")
 
+
 def report_long_words(words):
-  pass
+    long_words = []
+    long_no_hyphens = []
+
+    for word in words:
+        if len(word) > 10:
+            long_words.append(word)
+
+    for word in long_words:
+        if "-" in word:
+            long_words.remove(word)
+
+    for word in long_words:
+        if len(word) > 15:
+            new_word = word[0:15] + "..."
+            long_words.remove(word)
+            long_words.append(new_word)
+
+    return "These words are quite long: " + ", ".join(long_words)
+
 
 check_that_these_are_equal(
-  report_long_words([
-    'hello',
-    'nonbiological',
-    'Kay',
-    'this-is-a-long-word',
-    'antidisestablishmentarianism'
-  ]),
-  "These words are quite long: nonbiological, antidisestablis..."
+    report_long_words(
+        [
+            "hello",
+            "nonbiological",
+            "Kay",
+            "this-is-a-long-word",
+            "antidisestablishmentarianism",
+        ]
+    ),
+    "These words are quite long: nonbiological, antidisestablis...",
 )
 
 check_that_these_are_equal(
-  report_long_words([
-    'cat',
-    'dog',
-    'rhinosaurus',
-    'rhinosaurus-rex',
-    'frog'
-  ]),
-  "These words are quite long: rhinosaurus"
+    report_long_words(["cat", "dog", "rhinosaurus", "rhinosaurus-rex", "frog"]),
+    "These words are quite long: rhinosaurus",
 )
 
-check_that_these_are_equal(
-  report_long_words([
-    'cat'
-  ]),
-  "These words are quite long: "
-)
+check_that_these_are_equal(report_long_words(["cat"]), "These words are quite long: ")
 
 # Once you're done, move on to 041_challenge_2_example.py
